@@ -79,7 +79,7 @@ def main():
                 # Данные о каждой книге содержатся в элементе с одинаковым классом,
                 # так что получаем список с ними
                 soup = BeautifulSoup(res.text, 'lxml')
-                cards = soup.find_all(class_='col-xs-6 col-sm-4 col-md-3 col-lg-3')
+                cards = soup.find_all('article')
             except:
                 logging.error(f'{datetime.datetime.now().strftime("%H-%M-%S")}: '
                               f'На странице {page_number} не найдены данные о книгах')
